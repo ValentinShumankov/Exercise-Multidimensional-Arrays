@@ -9,14 +9,14 @@ namespace Jagged_Array_Manipulator
         {
             double[][] array = new double[int.Parse(Console.ReadLine())][];
             for ( int i = 0; i < array.Length; i++ )
-            {
+            { 
                 var curArr = Console.ReadLine( ).Split( ).Select( double.Parse ).ToArray( ) ;
                 array [ i ] = new double [ curArr.Length ];
                 for ( int k = 0; k < curArr.Length; k++ )
                 {
                     array [ i ] [ k ] = curArr [ k ];
                 }
-            }
+            } 
 
             for ( int i = 0; i < array.GetLength( 0 ) - 1; i++ )
             {
