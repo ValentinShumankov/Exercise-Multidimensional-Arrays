@@ -33,6 +33,7 @@ namespace Snake_Moves
                     Console.WriteLine(string.Join("", curStep.ToCharArray( ).Reverse( ) ) );
                 }
             }
+           
         }
     }
 }
