@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Snake_Moves
 {
@@ -6,7 +8,31 @@ namespace Snake_Moves
     {
         static void Main(string [ ] args)
         {
-           im was here
+            int[] stairsSize = Console.ReadLine()
+                .Split(" ",StringSplitOptions.RemoveEmptyEntries )
+                .Select(int.Parse)
+                .ToArray();
+            int[,] stairs = new int[stairsSize[0],stairsSize[1]];
+            Queue<char> snake = new Queue<char>(Console.ReadLine().ToCharArray());
+            for ( int row = 0; row < stairs.GetLength( 0 ); row++ )
+            {
+                string curStep = string.Empty; 
+                for ( int col = 0; col < stairs.GetLength( 1 ); col++ )
+                {
+                    var curSnakePart = snake.Peek();
+                    stairs [ row, col ] = curSnakePart;
+                    snake.Enqueue( snake.Dequeue( ) );
+                    curStep +=  (char)stairs [ row, col ] ;
+                }
+                if ( row % 2 == 0 )
+                {
+                    Console.WriteLine(curStep);
+                }
+                else
+                {
+                    Console.WriteLine(string.Join("", curStep.ToCharArray( ).Reverse( ) ) );
+                }
+            }
         }
     }
 }
