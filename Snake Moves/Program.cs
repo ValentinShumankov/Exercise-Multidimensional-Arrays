@@ -8,6 +8,7 @@ namespace Snake_Moves
     {
         static void Main(string [ ] args)
         {
+
             int[] stairsSize = Console.ReadLine()
                 .Split(" ",StringSplitOptions.RemoveEmptyEntries )
                 .Select(int.Parse)
@@ -33,6 +34,9 @@ namespace Snake_Moves
                     Console.WriteLine(string.Join("", curStep.ToCharArray( ).Reverse( ) ) );
                 }
             }
+
+           
+
         }
     }
 }
